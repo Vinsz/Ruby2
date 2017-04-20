@@ -12,8 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.hidden_field :user_id, :value => current_user.id  %>
   </div>
 
   <div class="field">
@@ -25,6 +24,8 @@
     <%= f.label :private %>
     <%= f.check_box :private %>
   </div>
+
+<h2>Tarefas</h2>
 
   <%= f.fields_for :tasks do |builder| %>
     <div class="field">

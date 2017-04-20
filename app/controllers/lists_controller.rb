@@ -15,7 +15,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
-    @list.tasks.build
+    5.times {@list.tasks.build}
   end
 
   # GET /lists/1/edit
