@@ -15,6 +15,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
+    @list.tasks.build
   end
 
   # GET /lists/1/edit
@@ -69,6 +70,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:user_id, :name, :private)
+      params.require(:list).permit(:user_id, :name, :private, tasks_attributes: [:id, :text, :closed, :_destroy])
     end
 end

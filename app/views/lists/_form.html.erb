@@ -26,6 +26,17 @@
     <%= f.check_box :private %>
   </div>
 
+  <%= f.fields_for :tasks do |builder| %>
+    <div class="field">
+      <%= builder.label :text %>
+      <%= builder.text_field :text %>
+    </div>
+    <div class="field">
+      <%= builder.label :closed %>
+      <%= builder.check_box :closed %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
