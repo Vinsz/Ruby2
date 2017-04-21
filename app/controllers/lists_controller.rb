@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.all
+    @privado = List.privado(true)
   end
 
   # GET /lists/1
@@ -15,7 +16,7 @@ class ListsController < ApplicationController
   # GET /lists/new
   def new
     @list = List.new
-    5.times {@list.tasks.build}
+    3.times {@list.tasks.build}
   end
 
   # GET /lists/1/edit

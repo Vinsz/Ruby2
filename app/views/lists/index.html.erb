@@ -1,5 +1,8 @@
-<h1>Lists</h1>
-
+<!--<h1>Lists</h1>
+    <% @privado.each do |lists| %>
+     <br> <%= lists.name %>
+     <br> <%= lists.private %>
+    <% end %> -->
 <table>
   <thead>
     <tr>
@@ -13,7 +16,7 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
-        <td><%= list.user %></td>
+        <td><%= list.user.id %></td>
         <td><%= list.name %></td>
         <td><%= list.private %></td>
         <td><%= link_to 'Show', list %></td>
