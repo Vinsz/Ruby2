@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
 	get "lists/index"
 	root "lists#index"
 	get "users/:id" => "users#show"
